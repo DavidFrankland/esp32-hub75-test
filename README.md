@@ -48,10 +48,10 @@ The project uses [PlatformIO](https://platformio.org/). I use Visual Studio Code
 - Clone the Git repository (or download as a zip and unzip)
 - Open the folder in VS Code, it should be recognised as a PlatformIO project
 - Amend [platformio.ini](platformio.ini) if required
-- Build the project (click ![PlatformIO: Build](img/build.png) on the toolbar or `Ctrl` + `Alt` + `B`)
+- Build the project: click ![PlatformIO: Build](img/build.png) on the toolbar or `Ctrl` + `Alt` + `B`
 
-The first build will take a couple of minutes as all the required libraries are downloaded and compiled. Subsequent build will only take a few seconds.
+The first build will take a couple of minutes as all the required libraries are downloaded and compiled. Subsequent builds will only take a few seconds.
 
-If all goes well, upload to youe ESP32 (click ![PlatformIO: Upload](img/upload.png) on the toolbar or `Ctrl` + `Alt` + `U`).
+If all goes well, upload to your ESP32: click ![PlatformIO: Upload](img/upload.png) on the toolbar or `Ctrl` + `Alt` + `U`.
 
 All the code is contained within [main.cpp](src/main.cpp).
