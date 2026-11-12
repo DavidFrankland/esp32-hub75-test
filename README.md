@@ -4,13 +4,9 @@ Sample code to check you've wired up your ESP32 and HUB75 LED panel correctly.
 
 Displays a "test card" to check colours are wired up correctly.
 
-Also has the beginnings of a clock, but so far only show a second hand.
-
 ## How to setup
 
 ### Hardware
-
-Connect the HUB75 panel directly to the ESP32. You'll need 16 "Dupont" (or similar) wires.
 
 The HUB75 panel needs its own beefy power supply, at least 4A for full brightness white with all LEDs on (64x64 LED panel). Use the (usually included) red/black cable for this. A smaller power supply is OK for testing, just don't turn all the LEDs on at once.
 
@@ -20,26 +16,30 @@ I have this one: [Amazon link](https://www.amazon.co.uk/dp/B07PQT2Q7L), but it's
 
 The sample code also includes a power supply tester, which gradually lights up all the LEDs white to check if the power supply can cope. If they start to turn pink, your power supply is not supplying enough current.
 
-Wire the ESP32 to panel as follows:
+The ESP32 is connected directly to the HUB75 panel. You can either use "Dupont" (or similar) wires, or a custom-made PCB.
+
+Using wires, connect the ESP32 to panel as follows:
 
 | HUB75 pin | Purpose | ESP32   |
 | --------- | ------- | ------- |
-| 1         | R1      | GPIO 25 |
-| 2         | G1      | GPIO 26 |
-| 3         | B1      | GPIO 27 |
+| 1         | R1      | GPIO 2  |
+| 2         | G1      | GPIO 15 |
+| 3         | B1      | GPIO 4  |
 | 4         | GND     | GND     |
-| 5         | R2      | GPIO 14 |
-| 6         | G2      | GPIO 12 |
-| 7         | B2      | GPIO 13 |
-| 8         | E       | GPIO 18 |
-| 9         | A       | GPIO 23 |
-| 10        | B       | GPIO 19 |
-| 11        | C       | GPIO 5  |
-| 12        | D       | GPIO 17 |
-| 13        | CLK     | GPIO 16 |
-| 14        | LAT     | GPIO 4  |
-| 15        | OE      | GPIO 15 |
+| 5         | R2      | GPIO 16 |
+| 6         | G2      | GPIO 27 |
+| 7         | B2      | GPIO 17 |
+| 8         | E       | GPIO 12 |
+| 9         | A       | GPIO 5  |
+| 10        | B       | GPIO 18 |
+| 11        | C       | GPIO 19 |
+| 12        | D       | GPIO 21 |
+| 13        | CLK     | GPIO 22 |
+| 14        | LAT     | GPIO 26 |
+| 15        | OE      | GPIO 25 |
 | 16        | GND     | GND     |
+
+Alternatively, a custom PCB is available from here: [Drive HUB75 LED panels using an ESP32-DEVKIT-V1 and SmartMatrix library](https://github.com/rorosaurus/esp32-hub75-driver). The Tindie store seems to be always out-of-stock. However, you can upload the free Gerber files to somewhere like [PCBWay](https://www.pcbway.com/) and have them manufactured. I ordered 5 PCBs for less than $10, including delivery.
 
 ### Software
 
