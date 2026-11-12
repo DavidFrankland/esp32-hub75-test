@@ -1,2 +1,5 @@
 .pio
 .vscode
+
+# don't add our config.h to Git
+config.h
